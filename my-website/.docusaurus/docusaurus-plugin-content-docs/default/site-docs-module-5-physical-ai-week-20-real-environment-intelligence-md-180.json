@@ -1,0 +1,20 @@
+{
+  "id": "Module 5-Physical AI/week20-real-environment-intelligence",
+  "title": "Week 20 — Intelligence in Real Environments: Adaptation, Learning & Behavior 🌍🤖🧠✨",
+  "description": "This final week of Module 5 explores how humanoid robots become truly intelligent in real-world environments.",
+  "source": "@site/docs/Module 5-Physical AI/week20-real-environment-intelligence.md",
+  "sourceDirName": "Module 5-Physical AI",
+  "slug": "/Module 5-Physical AI/week20-real-environment-intelligence",
+  "permalink": "/docs/Module 5-Physical AI/week20-real-environment-intelligence",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Module 5-Physical AI/week20-real-environment-intelligence.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Week 19 — Perception–Action Loops & Embodied Reasoning 🔁🤖🧠✨",
+    "permalink": "/docs/Module 5-Physical AI/week19-perception-action-loops"
+  }
+}

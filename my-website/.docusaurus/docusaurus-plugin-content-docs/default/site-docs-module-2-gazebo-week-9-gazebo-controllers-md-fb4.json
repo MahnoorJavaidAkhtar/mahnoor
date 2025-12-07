@@ -1,0 +1,24 @@
+{
+  "id": "module-2-gazebo/week9-gazebo-controllers",
+  "title": "Week 9 — Gazebo Controllers & Motion Simulation 💫🤖",
+  "description": "Robots aren’t truly “alive” until they MOVE.",
+  "source": "@site/docs/module-2-gazebo/week9-gazebo-controllers.md",
+  "sourceDirName": "module-2-gazebo",
+  "slug": "/module-2-gazebo/week9-gazebo-controllers",
+  "permalink": "/docs/module-2-gazebo/week9-gazebo-controllers",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-2-gazebo/week9-gazebo-controllers.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Week 8 — Sensors in Gazebo",
+    "permalink": "/docs/module-2-gazebo/week8-gazebo-sensors"
+  },
+  "next": {
+    "title": "Week 10 — NVIDIA Isaac Sim & Omniverse 🌌🤖✨",
+    "permalink": "/docs/module-3-nvidia-isaac/week10-intro-isaac-sim"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "Module 5-Physical AI/week19-perception-action-loops",
+  "title": "Week 19 — Perception–Action Loops & Embodied Reasoning 🔁🤖🧠✨",
+  "description": "One of the most powerful ideas in Physical AI is that intelligence emerges from a constant cycle:",
+  "source": "@site/docs/Module 5-Physical AI/week19-perception-action-loops.md",
+  "sourceDirName": "Module 5-Physical AI",
+  "slug": "/Module 5-Physical AI/week19-perception-action-loops",
+  "permalink": "/docs/Module 5-Physical AI/week19-perception-action-loops",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Module 5-Physical AI/week19-perception-action-loops.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Week 18 — Foundations of Physical AI (Embodied Cognition) 🤖🧠✨",
+    "permalink": "/docs/Module 5-Physical AI/week18-physical-ai-foundations"
+  },
+  "next": {
+    "title": "Week 20 — Intelligence in Real Environments: Adaptation, Learning & Behavior 🌍🤖🧠✨",
+    "permalink": "/docs/Module 5-Physical AI/week20-real-environment-intelligence"
+  }
+}

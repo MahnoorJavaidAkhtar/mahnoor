@@ -1,0 +1,131 @@
+/* FULL HERO BACKGROUND */
+.heroSection {
+  width: 100%;
+  padding: 5rem 3rem;
+  background: radial-gradient(circle at top left, #1a1038, #08061a 70%);
+  display: flex;
+  justify-content: center;
+}
+
+/* To center everything beautifully */
+.heroInner {
+  max-width: 1300px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT TEXT SIDE */
+.heroContent {
+  max-width: 600px;
+  color: white;
+}
+
+.heroTitle {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #ff4af2, #c86bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* BUTTON */
+.readButton {
+  padding: 14px 34px;
+  border-radius: 10px;
+  border: 2px solid #bd55ff;
+  color: #d28aff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: 0.25s;
+  display: inline-block;
+}
+
+.readButton:hover {
+  background: rgba(189, 85, 255, 0.2);
+  box-shadow: 0 0 15px #c96cff;
+}
+
+/* RIGHT IMAGE BOX + GLOW FRAME */
+.heroImageWrapper {
+  padding: 1rem;
+  border-radius: 35px;
+  border: 2px solid #6a1ac7;
+  box-shadow: 0 0 35px #7d24ff;
+  background: rgba(30, 0, 50, 0.3);
+}
+
+.heroImage {
+  width: 420px;
+  border-radius: 25px;
+}
+
+/* FULL SECTION */
+.featuresSection {
+  background: #0d0b1f;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+/* ⭐ TOP PURPLE LINE (same as screenshot) */
+.featuresSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: #a347ff;
+  box-shadow: 0 0 15px #c06bff;
+}
+
+/* CONTAINER FOR 3 FEATURES */
+.featuresContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  text-align: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+/* SINGLE FEATURE BOX */
+.featureBox {
+  max-width: 380px;
+  padding: 1rem;
+}
+
+/* ICONS */
+.featureIcon {
+  width: 160px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* TITLES */
+.featureTitle {
+  color: #b243ff;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* DESCRIPTION */
+.featureDesc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e6e6e6;
+}
+
+

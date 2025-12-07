@@ -1,0 +1,24 @@
+{
+  "id": "module-4-humanoids/week17-humanoid-vision-learning",
+  "title": "Week 17 — Vision, Perception & Learning for Humanoids 👁️🤖🧠✨",
+  "description": "Humanoids must see, understand, and learn from the world just like humans do.",
+  "source": "@site/docs/module-4-humanoids/week17-humanoid-vision-learning.md",
+  "sourceDirName": "module-4-humanoids",
+  "slug": "/module-4-humanoids/week17-humanoid-vision-learning",
+  "permalink": "/docs/module-4-humanoids/week17-humanoid-vision-learning",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-4-humanoids/week17-humanoid-vision-learning.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Week 16 — Humanoid Manipulation & Whole-Body Control 🤖🦾✨",
+    "permalink": "/docs/module-4-humanoids/week16-humanoid-manipulation"
+  },
+  "next": {
+    "title": "Week 18 — Foundations of Physical AI (Embodied Cognition) 🤖🧠✨",
+    "permalink": "/docs/Module 5-Physical AI/week18-physical-ai-foundations"
+  }
+}

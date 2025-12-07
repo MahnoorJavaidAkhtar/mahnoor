@@ -1,0 +1,24 @@
+{
+  "id": "Module 5-Physical AI/week18-physical-ai-foundations",
+  "title": "Week 18 — Foundations of Physical AI (Embodied Cognition) 🤖🧠✨",
+  "description": "Physical AI is the study of intelligence that emerges when a robot’s body interacts with the real physical world.",
+  "source": "@site/docs/Module 5-Physical AI/week18-physical-ai-foundations.md",
+  "sourceDirName": "Module 5-Physical AI",
+  "slug": "/Module 5-Physical AI/week18-physical-ai-foundations",
+  "permalink": "/docs/Module 5-Physical AI/week18-physical-ai-foundations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Module 5-Physical AI/week18-physical-ai-foundations.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Week 17 — Vision, Perception & Learning for Humanoids 👁️🤖🧠✨",
+    "permalink": "/docs/module-4-humanoids/week17-humanoid-vision-learning"
+  },
+  "next": {
+    "title": "Week 19 — Perception–Action Loops & Embodied Reasoning 🔁🤖🧠✨",
+    "permalink": "/docs/Module 5-Physical AI/week19-perception-action-loops"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "module-1-ros2/week5-ros2-advanced-patterns",
+  "title": "⚙️ Week 5 — ROS 2 Advanced Design Patterns",
+  "description": "Welcome to the final week of the ROS 2 module!",
+  "source": "@site/docs/module-1-ros2/week5-ros2-advanced-patterns.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/week5-ros2-advanced-patterns",
+  "permalink": "/docs/module-1-ros2/week5-ros2-advanced-patterns",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-1-ros2/week5-ros2-advanced-patterns.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Week 4 — ROS 2 Communication: Topics & Services",
+    "permalink": "/docs/module-1-ros2/week4-ros2-topics-services"
+  },
+  "next": {
+    "title": "Week 6 — Simulation Concepts & Physics Engines",
+    "permalink": "/docs/module-2-gazebo/week6-simulation-concepts"
+  }
+}

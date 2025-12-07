@@ -1,0 +1,24 @@
+{
+  "id": "module-3-nvidia-isaac/week12-isaac-perception-sensors",
+  "title": "Week 12 — Perception, Sensors & Synthetic Data in Isaac Sim 👁️🤖🎥✨",
+  "description": "Perception is the soul of intelligent robotics.",
+  "source": "@site/docs/module-3-nvidia-isaac/week12-isaac-perception-sensors.md",
+  "sourceDirName": "module-3-nvidia-isaac",
+  "slug": "/module-3-nvidia-isaac/week12-isaac-perception-sensors",
+  "permalink": "/docs/module-3-nvidia-isaac/week12-isaac-perception-sensors",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-3-nvidia-isaac/week12-isaac-perception-sensors.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Week 11 — Isaac Robotics Pipeline: USD, Scenes & Assets 🌌🤖📦",
+    "permalink": "/docs/module-3-nvidia-isaac/week11-isaac-pipeline-usd"
+  },
+  "next": {
+    "title": "Week 13 — Robotics AI Workflows in Isaac Sim 🤖🧠⚡",
+    "permalink": "/docs/module-3-nvidia-isaac/week13-isaac-robotics-ai"
+  }
+}

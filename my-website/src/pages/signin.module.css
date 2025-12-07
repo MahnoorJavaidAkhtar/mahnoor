@@ -1,0 +1,106 @@
+.pageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.card {
+  background: #0d0b1f;
+  padding: 2.5rem;
+  width: 420px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(132, 0, 255, 0.4);
+  border: 2px solid #7a1eff;
+}
+
+.title {
+  text-align: center;
+  color: #ff57d8;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.label {
+  color: #ddd;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 1.3rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid #7021c7;
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input:focus {
+  border-color: #bb59ff;
+  box-shadow: 0 0 10px #bb59ff;
+}
+
+.signinBtn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #a347ff, #d35cff);
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.signinBtn:hover {
+  opacity: 0.85;
+}
+
+.googleBtn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 10px;
+  color: #444;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.googleBtn:hover {
+  background: #e7e7e7;
+}
+
+.bottomText {
+  margin-top: 1.2rem;
+  color: #bbb;
+  text-align: center;
+}
+
+.bottomText a {
+  color: #5dc7ff;
+  text-decoration: underline;
+}
+
+.error {
+  color: #ff6f6f;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.success {
+  color: #6fff9c;
+  text-align: center;
+  margin-bottom: 1rem;
+}

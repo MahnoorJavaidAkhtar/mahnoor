@@ -1,0 +1,353 @@
+/* --------------------------------------------------
+   GLOBAL EFFECTS
+--------------------------------------------------*/
+
+.chat-particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent),
+              radial-gradient(circle at bottom, rgba(140,0,255,0.06), transparent);
+  animation: floatBg 12s infinite alternate ease-in-out;
+  z-index: 1;
+}
+
+@keyframes floatBg {
+  from { filter: blur(0px); }
+  to { filter: blur(6px); }
+}
+
+.neon-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+  z-index: 20;
+}
+
+
+
+/* --------------------------------------------------
+   🔮 FLOATING ORB BUTTON
+--------------------------------------------------*/
+
+.chatbot-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: radial-gradient(circle at top left, #a855f7, #6d28d9 60%, #4c1d95);
+  
+  box-shadow: 0 0 25px #a855f7, 0 0 60px #6d28d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: orbIdle 4s infinite ease-in-out;
+  z-index: 30;
+}
+
+@keyframes orbIdle {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+/* Orb core glowing */
+.orb-core {
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(circle, #ffffff, #d8b4fe);
+  border-radius: 50%;
+  box-shadow: 0 0 15px #e879f9, 0 0 30px #c084fc;
+}
+
+/* Rotating ring */
+.orb-rotate {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 50%;
+  animation: spin 6s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Thinking waves */
+.orb-thinking .orb-core {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 20px #f0abfc; }
+  50% { transform: scale(1.15); box-shadow: 0 0 35px #e879f9; }
+  100% { transform: scale(1); box-shadow: 0 0 20px #f0abfc; }
+}
+
+/* Listening mic ripple */
+.orb-listening .orb-core {
+  animation: micRipple 1.2s infinite ease-in-out;
+}
+
+@keyframes micRipple {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.25); opacity: 0.7; }
+}
+
+
+
+/* --------------------------------------------------
+   💬 CHAT WINDOW
+--------------------------------------------------*/
+
+.chatbot-window {
+  position: fixed;
+  bottom: 110px;                /* Ground se perfect gap */
+  right: 35px;                  /* Side spacing */
+  width: 360px;
+  height: 70vh;                 /* MUCH better than fixed px */
+  max-height: 600px;            /* So it never gets too tall */
+  
+  background: rgba(22, 10, 45, 0.78);  /* Softer, modern glass color */
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow: 
+      0 0 40px rgba(168, 85, 247, 0.45),
+      inset 0 0 25px rgba(255, 255, 255, 0.04);
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;                /* Always above all */
+  
+  animation: fadeInUp 0.35s ease-out;
+}
+
+/* Smooth popup animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+.fade-in-scale {
+  animation: popUp 0.3s ease-out;
+}
+
+@keyframes popUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.85); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+
+/* --------------------------------------------------
+   HEADER — HOLOGRAM BOT
+--------------------------------------------------*/
+
+.chatbot-header {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  gap: 10px;
+
+  background: linear-gradient(90deg, #9333ea, #7e22ce);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.chatbot-header button {
+  margin-left: auto;
+  border: none;
+  font-size: 20px;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hologram-bot {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: radial-gradient(circle, white, #d8b4fe);
+  box-shadow: 0 0 20px #f0abfc;
+  animation: holoFloat 3s infinite ease-in-out;
+}
+
+@keyframes holoFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+
+
+/* --------------------------------------------------
+   MESSAGES
+--------------------------------------------------*/
+
+.chatbot-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.chat-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.chat-message {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-message.bot {
+  align-self: flex-start;
+  background: rgba(255,255,255,0.15);
+  color: #f8f8ff;
+  border-bottom-left-radius: 4px;
+}
+
+.timestamp {
+  font-size: 11px;
+  margin-top: 4px;
+  opacity: 0.6;
+  color: #dad4ff;
+  
+  align-self: flex-start;
+}
+
+.chat-row.user .timestamp {
+  align-self: flex-end;
+}
+
+
+
+/* --------------------------------------------------
+   TYPING INDICATOR
+--------------------------------------------------*/
+
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  margin-left: 8px;
+  margin-top: -4px;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: blink 1.4s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}
+
+
+
+/* --------------------------------------------------
+   INPUT AREA
+--------------------------------------------------*/
+
+.chatbot-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px;
+  background: rgba(0,0,0,0.35);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 15px;
+}
+
+.chatbot-input button {
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+
+/* --------------------------------------------------
+   🎤 MIC BUTTON
+--------------------------------------------------*/
+
+.mic-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  font-size: 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.mic-active {
+  animation: micPulse 1s infinite alternate;
+  background: rgba(255,70,70,0.7);
+}
+
+@keyframes micPulse {
+  from { transform: scale(1); }
+  to   { transform: scale(1.2); }
+}
+
+
+

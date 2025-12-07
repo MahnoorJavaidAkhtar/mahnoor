@@ -1,0 +1,165 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "intro",
+              "path": "/docs/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Module 5-Physical AI/week18-physical-ai-foundations",
+              "path": "/docs/Module 5-Physical AI/week18-physical-ai-foundations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Module 5-Physical AI/week19-perception-action-loops",
+              "path": "/docs/Module 5-Physical AI/week19-perception-action-loops",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Module 5-Physical AI/week20-real-environment-intelligence",
+              "path": "/docs/Module 5-Physical AI/week20-real-environment-intelligence",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/week1-introduction",
+              "path": "/docs/module-1-ros2/week1-introduction",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/week2-physical-ai-landscape",
+              "path": "/docs/module-1-ros2/week2-physical-ai-landscape",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/week3-ros2-architecture-nodes",
+              "path": "/docs/module-1-ros2/week3-ros2-architecture-nodes",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/week4-ros2-topics-services",
+              "path": "/docs/module-1-ros2/week4-ros2-topics-services",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/week5-ros2-advanced-patterns",
+              "path": "/docs/module-1-ros2/week5-ros2-advanced-patterns",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2-gazebo/week6-simulation-concepts",
+              "path": "/docs/module-2-gazebo/week6-simulation-concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2-gazebo/week7-robot-modeling-urdf",
+              "path": "/docs/module-2-gazebo/week7-robot-modeling-urdf",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2-gazebo/week8-gazebo-sensors",
+              "path": "/docs/module-2-gazebo/week8-gazebo-sensors",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2-gazebo/week9-gazebo-controllers",
+              "path": "/docs/module-2-gazebo/week9-gazebo-controllers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-nvidia-isaac/week10-intro-isaac-sim",
+              "path": "/docs/module-3-nvidia-isaac/week10-intro-isaac-sim",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-nvidia-isaac/week11-isaac-pipeline-usd",
+              "path": "/docs/module-3-nvidia-isaac/week11-isaac-pipeline-usd",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-nvidia-isaac/week12-isaac-perception-sensors",
+              "path": "/docs/module-3-nvidia-isaac/week12-isaac-perception-sensors",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-nvidia-isaac/week13-isaac-robotics-ai",
+              "path": "/docs/module-3-nvidia-isaac/week13-isaac-robotics-ai",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-humanoids/week14-humanoid-foundations",
+              "path": "/docs/module-4-humanoids/week14-humanoid-foundations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-humanoids/week15-biped-locomotion",
+              "path": "/docs/module-4-humanoids/week15-biped-locomotion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-humanoids/week16-humanoid-manipulation",
+              "path": "/docs/module-4-humanoids/week16-humanoid-manipulation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-humanoids/week17-humanoid-vision-learning",
+              "path": "/docs/module-4-humanoids/week17-humanoid-vision-learning",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-basics/congratulations",
+              "path": "/docs/tutorial-basics/congratulations"
+            },
+            {
+              "id": "tutorial-basics/create-a-blog-post",
+              "path": "/docs/tutorial-basics/create-a-blog-post"
+            },
+            {
+              "id": "tutorial-basics/create-a-document",
+              "path": "/docs/tutorial-basics/create-a-document"
+            },
+            {
+              "id": "tutorial-basics/create-a-page",
+              "path": "/docs/tutorial-basics/create-a-page"
+            },
+            {
+              "id": "tutorial-basics/deploy-your-site",
+              "path": "/docs/tutorial-basics/deploy-your-site"
+            },
+            {
+              "id": "tutorial-basics/markdown-features",
+              "path": "/docs/tutorial-basics/markdown-features"
+            },
+            {
+              "id": "tutorial-extras/manage-docs-versions",
+              "path": "/docs/tutorial-extras/manage-docs-versions"
+            },
+            {
+              "id": "tutorial-extras/translate-your-site",
+              "path": "/docs/tutorial-extras/translate-your-site"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/intro",
+                "label": "Welcome to the Physical AI & Humanoid Robotics Textbook"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

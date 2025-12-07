@@ -1,0 +1,24 @@
+{
+  "id": "module-1-ros2/week2-physical-ai-landscape",
+  "title": "Week 2 — The Landscape of Physical AI",
+  "description": "Physical AI is expanding rapidly across industries and research, transforming machines into intelligent, adaptive, real-world actors.",
+  "source": "@site/docs/module-1-ros2/week2-physical-ai-landscape.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/week2-physical-ai-landscape",
+  "permalink": "/docs/module-1-ros2/week2-physical-ai-landscape",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-1-ros2/week2-physical-ai-landscape.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "⚡ Introduction to Physical AI",
+    "permalink": "/docs/module-1-ros2/week1-introduction"
+  },
+  "next": {
+    "title": "Week 3 — ROS 2 Architecture & Nodes",
+    "permalink": "/docs/module-1-ros2/week3-ros2-architecture-nodes"
+  }
+}

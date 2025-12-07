@@ -1,0 +1,24 @@
+{
+  "id": "module-4-humanoids/week14-humanoid-foundations",
+  "title": "Week 14 — Humanoid Robotics Foundations 🤖🦿✨",
+  "description": "Humanoid robotics is one of the most challenging, fascinating, and futuristic fields in robotics.",
+  "source": "@site/docs/module-4-humanoids/week14-humanoid-foundations.md",
+  "sourceDirName": "module-4-humanoids",
+  "slug": "/module-4-humanoids/week14-humanoid-foundations",
+  "permalink": "/docs/module-4-humanoids/week14-humanoid-foundations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-4-humanoids/week14-humanoid-foundations.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Week 13 — Robotics AI Workflows in Isaac Sim 🤖🧠⚡",
+    "permalink": "/docs/module-3-nvidia-isaac/week13-isaac-robotics-ai"
+  },
+  "next": {
+    "title": "Week 15 — Biped Locomotion: Walking, Gait Cycles & Stability 🦿🤖✨",
+    "permalink": "/docs/module-4-humanoids/week15-biped-locomotion"
+  }
+}
