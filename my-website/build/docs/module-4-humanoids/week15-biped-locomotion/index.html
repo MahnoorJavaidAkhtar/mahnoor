@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module-4-humanoids/week15-biped-locomotion" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Week 15 — Biped Locomotion: Walking, Gait Cycles &amp; Stability 🦿🤖✨ | Robotic Academy</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/docs/module-4-humanoids/week15-biped-locomotion"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Week 15 — Biped Locomotion: Walking, Gait Cycles &amp; Stability 🦿🤖✨ | Robotic Academy"><meta data-rh="true" name="description" content="Walking on two legs is one of the hardest challenges in robotics."><meta data-rh="true" property="og:description" content="Walking on two legs is one of the hardest challenges in robotics."><link data-rh="true" rel="icon" href="/img/docusaurus.png"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/docs/module-4-humanoids/week15-biped-locomotion"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/module-4-humanoids/week15-biped-locomotion" hreflang="en"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/module-4-humanoids/week15-biped-locomotion" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Week 15 — Biped Locomotion: Walking, Gait Cycles & Stability 🦿🤖✨","item":"https://your-docusaurus-site.example.com/docs/module-4-humanoids/week15-biped-locomotion"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Robotic Academy RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Robotic Academy Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e7ab4cb3.css">
+<script src="/assets/js/runtime~main.3bcb0d89.js" defer="defer"></script>
+<script src="/assets/js/main.d5f9eedb.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/docusaurus.png" alt="Robot Icon" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/docusaurus.png" alt="Robot Icon" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI Textbook</b></a><a class="navbar__item navbar__link" href="/signin">Course Modules</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/MahnoorJavaidAkhtar" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a class="navbar__item navbar__link" href="/signin">Sign In</a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/intro"><span title="Welcome to the Physical AI &amp; Humanoid Robotics Textbook" class="linkLabel_WmDU">Welcome to the Physical AI &amp; Humanoid Robotics Textbook</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-1-ros2/week1-introduction"><span title="Module 1: ROS 2" class="categoryLinkLabel_W154">Module 1: ROS 2</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-2-gazebo/week6-simulation-concepts"><span title="Module 2: Gazebo Simulation" class="categoryLinkLabel_W154">Module 2: Gazebo Simulation</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-3-nvidia-isaac/week10-intro-isaac-sim"><span title="Module 3: NVIDIA Isaac &amp; Robotics AI" class="categoryLinkLabel_W154">Module 3: NVIDIA Isaac &amp; Robotics AI</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/module-4-humanoids/week14-humanoid-foundations"><span title="Module 4: Humanoid Robotics" class="categoryLinkLabel_W154">Module 4: Humanoid Robotics</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-4-humanoids/week14-humanoid-foundations"><span title="Week 14 — Humanoid Robotics Foundations 🤖🦿✨" class="linkLabel_WmDU">Week 14 — Humanoid Robotics Foundations 🤖🦿✨</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/module-4-humanoids/week15-biped-locomotion"><span title="Week 15 — Biped Locomotion: Walking, Gait Cycles &amp; Stability 🦿🤖✨" class="linkLabel_WmDU">Week 15 — Biped Locomotion: Walking, Gait Cycles &amp; Stability 🦿🤖✨</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-4-humanoids/week16-humanoid-manipulation"><span title="Week 16 — Humanoid Manipulation &amp; Whole-Body Control 🤖🦾✨" class="linkLabel_WmDU">Week 16 — Humanoid Manipulation &amp; Whole-Body Control 🤖🦾✨</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-4-humanoids/week17-humanoid-vision-learning"><span title="Week 17 — Vision, Perception &amp; Learning for Humanoids 👁️🤖🧠✨" class="linkLabel_WmDU">Week 17 — Vision, Perception &amp; Learning for Humanoids 👁️🤖🧠✨</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/Module 5-Physical AI/week18-physical-ai-foundations"><span title="Module 5-Physical AI" class="categoryLinkLabel_W154">Module 5-Physical AI</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Module 4: Humanoid Robotics</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Week 15 — Biped Locomotion: Walking, Gait Cycles &amp; Stability 🦿🤖✨</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Week 15 — Biped Locomotion: Walking, Gait Cycles &amp; Stability 🦿🤖✨</h1></header>
+<p>Walking on two legs is one of the <strong>hardest challenges in robotics</strong>.<br>
+<!-- -->Unlike wheeled robots, bipeds are <strong>dynamically unstable</strong> — one small mistake and the robot falls.</p>
+<p>This week covers:</p>
+<ul>
+<li class="">gait cycles</li>
+<li class="">walking phases</li>
+<li class="">balance control</li>
+<li class="">ZMP &amp; CoM trajectory planning</li>
+<li class="">footstep planning</li>
+<li class="">humanoid stabilization</li>
+<li class="">advanced locomotion algorithms</li>
+</ul>
+<p>Let’s dive into humanoid walking — the art of controlled falling. 😄🦿✨</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-what-is-biped-locomotion-️">1. What Is Biped Locomotion? 🚶‍♂️🤖<a href="#1-what-is-biped-locomotion-️" class="hash-link" aria-label="Direct link to 1. What Is Biped Locomotion? 🚶‍♂️🤖" title="Direct link to 1. What Is Biped Locomotion? 🚶‍♂️🤖" translate="no">​</a></h2>
+<p>Biped locomotion = walking using <strong>two legs</strong>.</p>
+<p>A biped robot must:</p>
+<ul>
+<li class="">balance</li>
+<li class="">step</li>
+<li class="">recover</li>
+<li class="">shift weight</li>
+<li class="">follow trajectories</li>
+<li class="">react to disturbances</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-why-biped-walking-is-hard-">2. Why Biped Walking Is Hard 😅<a href="#2-why-biped-walking-is-hard-" class="hash-link" aria-label="Direct link to 2. Why Biped Walking Is Hard 😅" title="Direct link to 2. Why Biped Walking Is Hard 😅" translate="no">​</a></h2>
+<p>Walking is difficult because:</p>
+<ul>
+<li class="">the robot is top-heavy</li>
+<li class="">the support area is tiny</li>
+<li class="">balance must be maintained continuously</li>
+<li class="">dynamics are nonlinear</li>
+<li class="">terrain is unpredictable</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-human-inspired-walking-">3. Human-Inspired Walking 🤯🧠<a href="#3-human-inspired-walking-" class="hash-link" aria-label="Direct link to 3. Human-Inspired Walking 🤯🧠" title="Direct link to 3. Human-Inspired Walking 🤯🧠" translate="no">​</a></h2>
+<p>Humans walk by:</p>
+<ul>
+<li class="">shifting weight</li>
+<li class="">swinging one leg</li>
+<li class="">catching themselves</li>
+<li class="">using momentum</li>
+</ul>
+<p>Robots try to copy this.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-gait-cycle-overview-">4. Gait Cycle Overview 🔄🦿<a href="#4-gait-cycle-overview-" class="hash-link" aria-label="Direct link to 4. Gait Cycle Overview 🔄🦿" title="Direct link to 4. Gait Cycle Overview 🔄🦿" translate="no">​</a></h2>
+<p>A gait cycle includes:</p>
+<p>Heel strike → Support phase → Toe-off → Swing phase → Heel strike</p>
+<p>yaml
+Copy code</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-walking-phases-">5. Walking Phases 👣<a href="#5-walking-phases-" class="hash-link" aria-label="Direct link to 5. Walking Phases 👣" title="Direct link to 5. Walking Phases 👣" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-double-support-phase">1. <strong>Double Support Phase</strong><a href="#1-double-support-phase" class="hash-link" aria-label="Direct link to 1-double-support-phase" title="Direct link to 1-double-support-phase" translate="no">​</a></h3>
+<p>Both feet touch the ground.<br>
+<!-- -->Stable — easy to balance.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-single-support-phase">2. <strong>Single Support Phase</strong><a href="#2-single-support-phase" class="hash-link" aria-label="Direct link to 2-single-support-phase" title="Direct link to 2-single-support-phase" translate="no">​</a></h3>
+<p>Only one foot touches the ground.<br>
+<!-- -->Unstable — hardest part of walking.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-swing-phase">3. <strong>Swing Phase</strong><a href="#3-swing-phase" class="hash-link" aria-label="Direct link to 3-swing-phase" title="Direct link to 3-swing-phase" translate="no">​</a></h3>
+<p>Leg moves freely in air.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-center-of-mass-com-dynamics-️">6. Center of Mass (CoM) Dynamics ⚖️<a href="#6-center-of-mass-com-dynamics-️" class="hash-link" aria-label="Direct link to 6. Center of Mass (CoM) Dynamics ⚖️" title="Direct link to 6. Center of Mass (CoM) Dynamics ⚖️" translate="no">​</a></h2>
+<p>CoM must move smoothly:</p>
+<ul>
+<li class="">forward progression</li>
+<li class="">height control</li>
+<li class="">lateral shift</li>
+</ul>
+<p>A sudden shift → falling.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-zero-moment-point-zmp-">7. Zero Moment Point (ZMP) 🌀<a href="#7-zero-moment-point-zmp-" class="hash-link" aria-label="Direct link to 7. Zero Moment Point (ZMP) 🌀" title="Direct link to 7. Zero Moment Point (ZMP) 🌀" translate="no">​</a></h2>
+<p>ZMP is the point where total ground reaction forces act.</p>
+<p><strong>Condition for stability:</strong></p>
+<p>ZMP must lie within the support polygon.</p>
+<p>yaml
+Copy code</p>
+<p>If ZMP goes outside → robot falls.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-support-polygon-">8. Support Polygon 🔷👣<a href="#8-support-polygon-" class="hash-link" aria-label="Direct link to 8. Support Polygon 🔷👣" title="Direct link to 8. Support Polygon 🔷👣" translate="no">​</a></h2>
+<p>Defined by foot contact points.</p>
+<p>Standing:</p>
+<p>Two feet → large polygon</p>
+<p>scss
+Copy code</p>
+<p>Walking (single support):</p>
+<p>One foot → tiny polygon → unstable</p>
+<p>yaml
+Copy code</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="9-inverted-pendulum-model-">9. Inverted Pendulum Model 🪄<a href="#9-inverted-pendulum-model-" class="hash-link" aria-label="Direct link to 9. Inverted Pendulum Model 🪄" title="Direct link to 9. Inverted Pendulum Model 🪄" translate="no">​</a></h2>
+<p>Robots approximate human walking using:</p>
+<p>Linear Inverted Pendulum Model (LIPM)</p>
+<p>yaml
+Copy code</p>
+<p>It simplifies locomotion control.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-lipm-dynamics-">10. LIPM Dynamics ⚡📈<a href="#10-lipm-dynamics-" class="hash-link" aria-label="Direct link to 10. LIPM Dynamics ⚡📈" title="Direct link to 10. LIPM Dynamics ⚡📈" translate="no">​</a></h2>
+<p>Key idea:</p>
+<p>Body behaves like a pendulum pivoting around the foot.</p>
+<p>yaml
+Copy code</p>
+<p>Used for:</p>
+<ul>
+<li class="">CoM trajectory planning</li>
+<li class="">stable stepping</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="11-footstep-planning-️">11. Footstep Planning 👣🗺️<a href="#11-footstep-planning-️" class="hash-link" aria-label="Direct link to 11. Footstep Planning 👣🗺️" title="Direct link to 11. Footstep Planning 👣🗺️" translate="no">​</a></h2>
+<p>Foot placement planner chooses:</p>
+<ul>
+<li class="">step length</li>
+<li class="">lateral position</li>
+<li class="">step timing</li>
+<li class="">turning angle</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="12-step-timing-️">12. Step Timing ⏱️<a href="#12-step-timing-️" class="hash-link" aria-label="Direct link to 12. Step Timing ⏱️" title="Direct link to 12. Step Timing ⏱️" translate="no">​</a></h2>
+<p>Faster walking:</p>
+<p>shorter stance time</p>
+<p>yaml
+Copy code</p>
+<p>Slower walking:</p>
+<p>longer stance time</p>
+<p>yaml
+Copy code</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="13-gait-parameters-️">13. Gait Parameters 🎛️<a href="#13-gait-parameters-️" class="hash-link" aria-label="Direct link to 13. Gait Parameters 🎛️" title="Direct link to 13. Gait Parameters 🎛️" translate="no">​</a></h2>
+<p>Main parameters:</p>
+<ul>
+<li class="">step length</li>
+<li class="">cadence</li>
+<li class="">step height</li>
+<li class="">swing time</li>
+<li class="">torso angle</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="14-swing-leg-trajectory-">14. Swing Leg Trajectory 🦿✨<a href="#14-swing-leg-trajectory-" class="hash-link" aria-label="Direct link to 14. Swing Leg Trajectory 🦿✨" title="Direct link to 14. Swing Leg Trajectory 🦿✨" translate="no">​</a></h2>
+<p>Swing trajectory must be:</p>
+<ul>
+<li class="">smooth</li>
+<li class="">collision-free</li>
+<li class="">dynamically stable</li>
+</ul>
+<p>Using splines like:</p>
+<ul>
+<li class="">cubic</li>
+<li class="">quintic</li>
+<li class="">Bezier curves</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="15-foot-clearance-">15. Foot Clearance 🌙👣<a href="#15-foot-clearance-" class="hash-link" aria-label="Direct link to 15. Foot Clearance 🌙👣" title="Direct link to 15. Foot Clearance 🌙👣" translate="no">​</a></h2>
+<p>Robot lifts foot:</p>
+<ul>
+<li class="">high enough to avoid collision</li>
+<li class="">low enough to save energy</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="16-torso-control-️">16. Torso Control 🧍‍♂️🤖<a href="#16-torso-control-️" class="hash-link" aria-label="Direct link to 16. Torso Control 🧍‍♂️🤖" title="Direct link to 16. Torso Control 🧍‍♂️🤖" translate="no">​</a></h2>
+<p>A stable torso is critical for:</p>
+<ul>
+<li class="">forward momentum</li>
+<li class="">natural walking</li>
+<li class="">maintaining balance</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="17-balance-during-pushes-">17. Balance During Pushes 💥🤖<a href="#17-balance-during-pushes-" class="hash-link" aria-label="Direct link to 17. Balance During Pushes 💥🤖" title="Direct link to 17. Balance During Pushes 💥🤖" translate="no">​</a></h2>
+<p>Robots must handle:</p>
+<ul>
+<li class="">shoves</li>
+<li class="">wind</li>
+<li class="">slips</li>
+<li class="">unexpected impacts</li>
+</ul>
+<p>Using:</p>
+<ul>
+<li class="">ankle strategy</li>
+<li class="">hip strategy</li>
+<li class="">stepping strategy</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="18-ankle-strategy-️">18. Ankle Strategy 🦶⚖️<a href="#18-ankle-strategy-️" class="hash-link" aria-label="Direct link to 18. Ankle Strategy 🦶⚖️" title="Direct link to 18. Ankle Strategy 🦶⚖️" translate="no">​</a></h2>
+<p>Small disturbances → adjust ankle torques.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="19-hip-strategy-">19. Hip Strategy 🪢<a href="#19-hip-strategy-" class="hash-link" aria-label="Direct link to 19. Hip Strategy 🪢" title="Direct link to 19. Hip Strategy 🪢" translate="no">​</a></h2>
+<p>Larger disturbances → swing torso &amp; hips.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="20-stepping-strategy-️">20. Stepping Strategy 🏃‍♂️💥<a href="#20-stepping-strategy-️" class="hash-link" aria-label="Direct link to 20. Stepping Strategy 🏃‍♂️💥" title="Direct link to 20. Stepping Strategy 🏃‍♂️💥" translate="no">​</a></h2>
+<p>If balance is lost → robot MUST take an emergency step.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="21-whole-body-control-wbc-">21. Whole-Body Control (WBC) 🔗✨<a href="#21-whole-body-control-wbc-" class="hash-link" aria-label="Direct link to 21. Whole-Body Control (WBC) 🔗✨" title="Direct link to 21. Whole-Body Control (WBC) 🔗✨" translate="no">​</a></h2>
+<p>Coordinates:</p>
+<ul>
+<li class="">arms</li>
+<li class="">legs</li>
+<li class="">torso</li>
+<li class="">head</li>
+</ul>
+<p>All joints work together to maintain stability.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="22-compliance-in-walking-">22. Compliance in Walking 🌈🦿<a href="#22-compliance-in-walking-" class="hash-link" aria-label="Direct link to 22. Compliance in Walking 🌈🦿" title="Direct link to 22. Compliance in Walking 🌈🦿" translate="no">​</a></h2>
+<p>Soft joints give:</p>
+<ul>
+<li class="">natural gait</li>
+<li class="">shock absorption</li>
+<li class="">energy efficiency</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="23-walking-on-uneven-terrain-">23. Walking on Uneven Terrain 🌄🤖<a href="#23-walking-on-uneven-terrain-" class="hash-link" aria-label="Direct link to 23. Walking on Uneven Terrain 🌄🤖" title="Direct link to 23. Walking on Uneven Terrain 🌄🤖" translate="no">​</a></h2>
+<p>Requires:</p>
+<ul>
+<li class="">foot sensors</li>
+<li class="">IMU</li>
+<li class="">online trajectory adaptation</li>
+<li class="">compliance</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="24-slope-walking-️">24. Slope Walking ⛰️<a href="#24-slope-walking-️" class="hash-link" aria-label="Direct link to 24. Slope Walking ⛰️" title="Direct link to 24. Slope Walking ⛰️" translate="no">​</a></h2>
+<p>Robot must:</p>
+<ul>
+<li class="">lean forward uphill</li>
+<li class="">lean backward downhill</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="25-stair-climbing-">25. Stair Climbing 🪜⚡<a href="#25-stair-climbing-" class="hash-link" aria-label="Direct link to 25. Stair Climbing 🪜⚡" title="Direct link to 25. Stair Climbing 🪜⚡" translate="no">​</a></h2>
+<p>One of the hardest tasks:</p>
+<ul>
+<li class="">high swing clearance</li>
+<li class="">precise foot placement</li>
+<li class="">strong knee torques</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="26-turning--rotation-">26. Turning &amp; Rotation 🔄<a href="#26-turning--rotation-" class="hash-link" aria-label="Direct link to 26. Turning &amp; Rotation 🔄" title="Direct link to 26. Turning &amp; Rotation 🔄" translate="no">​</a></h2>
+<p>Robots turn by:</p>
+<ul>
+<li class="">pivot stepping</li>
+<li class="">differential hip motion</li>
+<li class="">torso rotation</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="27-dynamic-gaits-️">27. Dynamic Gaits 🏃‍♂️⚡<a href="#27-dynamic-gaits-️" class="hash-link" aria-label="Direct link to 27. Dynamic Gaits 🏃‍♂️⚡" title="Direct link to 27. Dynamic Gaits 🏃‍♂️⚡" translate="no">​</a></h2>
+<p>Advanced humanoids use:</p>
+<ul>
+<li class="">running</li>
+<li class="">hopping</li>
+<li class="">skipping</li>
+<li class="">jumping</li>
+</ul>
+<p>These require high-performance control.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="28-energy-efficiency-">28. Energy Efficiency 🔋🧠<a href="#28-energy-efficiency-" class="hash-link" aria-label="Direct link to 28. Energy Efficiency 🔋🧠" title="Direct link to 28. Energy Efficiency 🔋🧠" translate="no">​</a></h2>
+<p>Good walking controllers:</p>
+<ul>
+<li class="">recycle momentum</li>
+<li class="">minimize joint torques</li>
+<li class="">optimize footstep timing</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="29-common-walking-failures-">29. Common Walking Failures 🚨🦿<a href="#29-common-walking-failures-" class="hash-link" aria-label="Direct link to 29. Common Walking Failures 🚨🦿" title="Direct link to 29. Common Walking Failures 🚨🦿" translate="no">​</a></h2>
+<p>Failures include:</p>
+<ul>
+<li class="">foot scuffing</li>
+<li class="">slipping</li>
+<li class="">knee overextension</li>
+<li class="">CoM misalignment</li>
+<li class="">unstable torso</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="30-recovery-mechanisms-">30. Recovery Mechanisms 🔁<a href="#30-recovery-mechanisms-" class="hash-link" aria-label="Direct link to 30. Recovery Mechanisms 🔁" title="Direct link to 30. Recovery Mechanisms 🔁" translate="no">​</a></h2>
+<p>Robots recover by:</p>
+<ul>
+<li class="">adjusting ZMP</li>
+<li class="">bending knees</li>
+<li class="">widening stance</li>
+<li class="">taking extra steps</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="31-week-summary-">31. Week Summary 🌟🦿💜<a href="#31-week-summary-" class="hash-link" aria-label="Direct link to 31. Week Summary 🌟🦿💜" title="Direct link to 31. Week Summary 🌟🦿💜" translate="no">​</a></h2>
+<p>This week covered:</p>
+<ul>
+<li class="">gait cycles</li>
+<li class="">support phases</li>
+<li class="">ZMP &amp; CoM stability</li>
+<li class="">footstep planning</li>
+<li class="">inverted pendulum model</li>
+<li class="">swing trajectories</li>
+<li class="">balance strategies</li>
+<li class="">complex locomotion tasks</li>
+</ul>
+<p>Next → <strong>WEEK 16: Manipulation &amp; Whole-Body Control</strong> 🤖🦾✨</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/module-4-humanoids/week14-humanoid-foundations"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Week 14 — Humanoid Robotics Foundations 🤖🦿✨</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/module-4-humanoids/week16-humanoid-manipulation"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Week 16 — Humanoid Manipulation &amp; Whole-Body Control 🤖🦾✨</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-what-is-biped-locomotion-️" class="table-of-contents__link toc-highlight">1. What Is Biped Locomotion? 🚶‍♂️🤖</a></li><li><a href="#2-why-biped-walking-is-hard-" class="table-of-contents__link toc-highlight">2. Why Biped Walking Is Hard 😅</a></li><li><a href="#3-human-inspired-walking-" class="table-of-contents__link toc-highlight">3. Human-Inspired Walking 🤯🧠</a></li><li><a href="#4-gait-cycle-overview-" class="table-of-contents__link toc-highlight">4. Gait Cycle Overview 🔄🦿</a></li><li><a href="#5-walking-phases-" class="table-of-contents__link toc-highlight">5. Walking Phases 👣</a><ul><li><a href="#1-double-support-phase" class="table-of-contents__link toc-highlight">1. <strong>Double Support Phase</strong></a></li><li><a href="#2-single-support-phase" class="table-of-contents__link toc-highlight">2. <strong>Single Support Phase</strong></a></li><li><a href="#3-swing-phase" class="table-of-contents__link toc-highlight">3. <strong>Swing Phase</strong></a></li></ul></li><li><a href="#6-center-of-mass-com-dynamics-️" class="table-of-contents__link toc-highlight">6. Center of Mass (CoM) Dynamics ⚖️</a></li><li><a href="#7-zero-moment-point-zmp-" class="table-of-contents__link toc-highlight">7. Zero Moment Point (ZMP) 🌀</a></li><li><a href="#8-support-polygon-" class="table-of-contents__link toc-highlight">8. Support Polygon 🔷👣</a></li><li><a href="#9-inverted-pendulum-model-" class="table-of-contents__link toc-highlight">9. Inverted Pendulum Model 🪄</a></li><li><a href="#10-lipm-dynamics-" class="table-of-contents__link toc-highlight">10. LIPM Dynamics ⚡📈</a></li><li><a href="#11-footstep-planning-️" class="table-of-contents__link toc-highlight">11. Footstep Planning 👣🗺️</a></li><li><a href="#12-step-timing-️" class="table-of-contents__link toc-highlight">12. Step Timing ⏱️</a></li><li><a href="#13-gait-parameters-️" class="table-of-contents__link toc-highlight">13. Gait Parameters 🎛️</a></li><li><a href="#14-swing-leg-trajectory-" class="table-of-contents__link toc-highlight">14. Swing Leg Trajectory 🦿✨</a></li><li><a href="#15-foot-clearance-" class="table-of-contents__link toc-highlight">15. Foot Clearance 🌙👣</a></li><li><a href="#16-torso-control-️" class="table-of-contents__link toc-highlight">16. Torso Control 🧍‍♂️🤖</a></li><li><a href="#17-balance-during-pushes-" class="table-of-contents__link toc-highlight">17. Balance During Pushes 💥🤖</a></li><li><a href="#18-ankle-strategy-️" class="table-of-contents__link toc-highlight">18. Ankle Strategy 🦶⚖️</a></li><li><a href="#19-hip-strategy-" class="table-of-contents__link toc-highlight">19. Hip Strategy 🪢</a></li><li><a href="#20-stepping-strategy-️" class="table-of-contents__link toc-highlight">20. Stepping Strategy 🏃‍♂️💥</a></li><li><a href="#21-whole-body-control-wbc-" class="table-of-contents__link toc-highlight">21. Whole-Body Control (WBC) 🔗✨</a></li><li><a href="#22-compliance-in-walking-" class="table-of-contents__link toc-highlight">22. Compliance in Walking 🌈🦿</a></li><li><a href="#23-walking-on-uneven-terrain-" class="table-of-contents__link toc-highlight">23. Walking on Uneven Terrain 🌄🤖</a></li><li><a href="#24-slope-walking-️" class="table-of-contents__link toc-highlight">24. Slope Walking ⛰️</a></li><li><a href="#25-stair-climbing-" class="table-of-contents__link toc-highlight">25. Stair Climbing 🪜⚡</a></li><li><a href="#26-turning--rotation-" class="table-of-contents__link toc-highlight">26. Turning &amp; Rotation 🔄</a></li><li><a href="#27-dynamic-gaits-️" class="table-of-contents__link toc-highlight">27. Dynamic Gaits 🏃‍♂️⚡</a></li><li><a href="#28-energy-efficiency-" class="table-of-contents__link toc-highlight">28. Energy Efficiency 🔋🧠</a></li><li><a href="#29-common-walking-failures-" class="table-of-contents__link toc-highlight">29. Common Walking Failures 🚨🦿</a></li><li><a href="#30-recovery-mechanisms-" class="table-of-contents__link toc-highlight">30. Recovery Mechanisms 🔁</a></li><li><a href="#31-week-summary-" class="table-of-contents__link toc-highlight">31. Week Summary 🌟🦿💜</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Course Content</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/signin">Module 1: ROS 2</a></li><li class="footer__item"><a class="footer__link-item" href="/signin">Module 2: Gazebo</a></li><li class="footer__item"><a class="footer__link-item" href="/signin">Module 3: Isaac</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Advanced Topics</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/signin">Module 4: VLA</a></li><li class="footer__item"><a class="footer__link-item" href="/signin">Module 5: Physical AI</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/MahnoorJavaidAkhtar" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub Repository<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://developer.nvidia.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">NVIDIA Isaac<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://docs.ros.org" target="_blank" rel="noopener noreferrer" class="footer__link-item">ROS 2 Documentation<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics Textbook. Made by Mahnoor Javaid.</div></div></div></footer><div class="chat-particles"></div><button class="chatbot-button"><div class="orb-core"></div><div class="orb-waves"></div><div class="orb-rotate"></div></button></div>
+</body>
+</html>
