@@ -8,7 +8,7 @@ const config: Config = {
   tagline: 'Dinosaurs are cool',
   favicon: 'img/docusaurus.png',
 
-  url: 'http://localhost:3000',
+  url: 'https://mahnoorjavaid.vercel.app',
   baseUrl: '/',
 
   organizationName: 'facebook',
