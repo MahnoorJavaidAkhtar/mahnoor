@@ -7,7 +7,7 @@ export default {
   "title": "Robotic Academy",
   "tagline": "Dinosaurs are cool",
   "favicon": "img/docusaurus.png",
-  "url": "https://your-docusaurus-site.example.com",
+  "url": "http://localhost:3000",
   "baseUrl": "/",
   "organizationName": "facebook",
   "projectName": "docusaurus",
