@@ -26,21 +26,25 @@ app.add_middleware(
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+# lazy globals
 qdrant = None
 COLLECTION = None
 embed_text = None
 
-@app.on_event("startup")
-def startup():
-    global qdrant, COLLECTION, embed_text
-    from vector_store import qdrant as _qdrant, COLLECTION as _COLLECTION
-    from embeddings import embed_text as _embed_text
-    qdrant = _qdrant
-    COLLECTION = _COLLECTION
-    embed_text = _embed_text
-
 @app.post("/ask", response_model=ChatResponse)
 def ask_question(body: ChatRequest):
+    global qdrant, COLLECTION, embed_text
+
+    # 🔥 LAZY LOAD (FIRST REQUEST ONLY)
+    if embed_text is None:
+        from embeddings import embed_text as _embed_text
+        embed_text = _embed_text
+
+    if qdrant is None:
+        from vector_store import qdrant as _qdrant, COLLECTION as _COLLECTION
+        qdrant = _qdrant
+        COLLECTION = _COLLECTION
+
     try:
         vector = embed_text(body.question)
     except Exception:
@@ -57,8 +61,9 @@ def ask_question(body: ChatRequest):
     except Exception:
         raise HTTPException(status_code=500, detail="Vector DB search failed")
 
-    context = "\n\n".join([p.payload.get("text", "") for p in results]) or \
-              "No relevant content found in the textbook."
+    context = "\n\n".join(
+        [p.payload.get("text", "") for p in results]
+    ) or "No relevant content found in the textbook."
 
     prompt = f"""
 You are an AI teaching assistant. Answer ONLY using the textbook content below:
@@ -83,6 +88,7 @@ Question: {body.question}
         raise HTTPException(status_code=500, detail="LLM request failed")
 
     return ChatResponse(answer=answer)
+
 
 
 
