@@ -1,9 +1,11 @@
-sentence-transformers
-torch
-numpy
-qdrant-client
+--extra-index-url https://download.pytorch.org/whl/cpu
+
 fastapi
 uvicorn
 python-dotenv
 openai
+qdrant-client
+numpy
+sentence-transformers
+torch==2.2.2+cpu
 
