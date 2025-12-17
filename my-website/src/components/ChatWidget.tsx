@@ -1,7 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../css/chatbot.css";
 
-const BACKEND_URL = "http://localhost:8000/ask";
+// ✅ PRODUCTION BACKEND (Railway) — via Vercel env
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_API_URL
+    ? `${process.env.NEXT_PUBLIC_API_URL}/ask`
+    : "";
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +14,10 @@ export default function ChatWidget() {
   const [loading, setLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
 
-  const messagesEndRef = useRef(null);
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const recognitionRef = useRef<any>(null);
 
-  // 🎤 Voice Recognition Setup
+  // 🎤 Voice Recognition
   useEffect(() => {
     const SpeechRecognition =
       (window as any).SpeechRecognition ||
@@ -40,8 +44,8 @@ export default function ChatWidget() {
     recognitionRef.current.start();
   };
 
-  // ⌨ Typewriter Effect
-  const typeWriter = (text: string, callback: Function) => {
+  // ✨ Typewriter effect
+  const typeWriter = (text: string, callback: (val: string) => void) => {
     let index = 0;
     let display = "";
 
@@ -53,37 +57,58 @@ export default function ChatWidget() {
     }, 20);
   };
 
-  // Auto Scroll
+  // 🔽 Auto scroll
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // ⭐ AUTO WELCOME MESSAGE WHEN CHAT OPENS
+  // 👋 Welcome message
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      const welcomeMsg = {
-        sender: "bot",
-        text: `👋 Hi! I'm your MJ AI assistant.  
-Ask me anything about Physical AI, ROS2, Gazebo, Isaac Sim, or Humanoid Robotics!  
+      setMessages([
+        {
+          sender: "bot",
+          text: `👋 Hi! I'm your MJ AI assistant.
+Ask me anything about Physical AI, ROS2, Gazebo, Isaac Sim, or Humanoid Robotics!
 I can also explain any part of your textbook — just type your question.`,
-        time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-      };
-
-      setMessages([welcomeMsg]);
+          time: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+        },
+      ]);
     }
   }, [isOpen]);
 
-  // ➤ Send Message
+  // 🚀 Send message
   const sendMessage = async () => {
     if (!userInput.trim()) return;
 
-    const newMessage = {
+    if (!BACKEND_URL) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "bot",
+          text: "⚠️ Backend URL not configured.",
+          time: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+        },
+      ]);
+      return;
+    }
+
+    const userMsg = {
       sender: "user",
       text: userInput,
-      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      time: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
     };
 
-    setMessages((prev) => [...prev, newMessage]);
+    setMessages((prev) => [...prev, userMsg]);
     setUserInput("");
     setLoading(true);
 
@@ -91,8 +116,10 @@ I can also explain any part of your textbook — just type your question.`,
       const res = await fetch(BACKEND_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: userInput }),
+        body: JSON.stringify({ question: userMsg.text }),
       });
+
+      if (!res.ok) throw new Error("API failed");
 
       const data = await res.json();
       const botText = data.answer || "No response 😢";
@@ -100,12 +127,15 @@ I can also explain any part of your textbook — just type your question.`,
       let temp = {
         sender: "bot",
         text: "",
-        time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        time: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
       };
 
       setMessages((prev) => [...prev, temp]);
 
-      typeWriter(botText, (typed: string) => {
+      typeWriter(botText, (typed) => {
         temp.text = typed;
         setMessages((prev) => [...prev.slice(0, -1), { ...temp }]);
       });
@@ -115,7 +145,10 @@ I can also explain any part of your textbook — just type your question.`,
         {
           sender: "bot",
           text: "⚠️ Backend unreachable.",
-          time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+          time: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
         },
       ]);
     }
@@ -127,11 +160,11 @@ I can also explain any part of your textbook — just type your question.`,
     <>
       <div className="chat-particles"></div>
 
-      {/* Floating Orb Button */}
+      {/* Floating Orb */}
       <button
-        className={`chatbot-button 
-          ${loading ? "orb-thinking" : ""} 
-          ${isListening ? "orb-listening" : ""}`}
+        className={`chatbot-button ${
+          loading ? "orb-thinking" : ""
+        } ${isListening ? "orb-listening" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="orb-core"></div>
@@ -141,7 +174,6 @@ I can also explain any part of your textbook — just type your question.`,
 
       {isOpen && <div className="neon-overlay"></div>}
 
-      {/* CHAT WINDOW */}
       {isOpen && (
         <div className="chatbot-window fade-in-scale">
           <div className="chatbot-header">
@@ -153,7 +185,9 @@ I can also explain any part of your textbook — just type your question.`,
           <div className="chatbot-messages">
             {messages.map((msg, i) => (
               <div key={i} className={`chat-row ${msg.sender}`}>
-                <div className={`chat-message ${msg.sender}`}>{msg.text}</div>
+                <div className={`chat-message ${msg.sender}`}>
+                  {msg.text}
+                </div>
                 <div className="timestamp">{msg.time}</div>
               </div>
             ))}
@@ -189,6 +223,7 @@ I can also explain any part of your textbook — just type your question.`,
     </>
   );
 }
+
 
 
 
