@@ -17,8 +17,9 @@ export default function Home() {
               Master the future of AI-powered robotics with hands-on learning
             </p>
 
-           <Link className={styles.readButton} to="/signin">
-  Sign in to Read
+           <Link className={styles.readButton} to="/docs/intro
+">
+  Read Book
 </Link>
 
           </div>

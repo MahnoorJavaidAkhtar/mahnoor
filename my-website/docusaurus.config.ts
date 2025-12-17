@@ -75,7 +75,7 @@ const config: Config = {
       },
       style: 'dark',
       items: [
-        {label: 'Course Modules', to: '/signin', position: 'left'},
+        {label: 'Course Modules', to: '/docs/intro' ,position: 'left'},
         {label: 'GitHub', href: 'https://github.com/MahnoorJavaidAkhtar', position: 'right'},
         {label: 'Sign In', to: '/signin', position: 'right'},
       ],
